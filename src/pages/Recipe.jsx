@@ -25,7 +25,7 @@ function Recipe() {
     <DetailWrapper>
         <div>
             <h2>{details.title}</h2>
-            <img src={details.image} alt=""/>
+            <a href={details.image} target="_blank"><img src={details.image}  alt=""/></a>
         </div>
         <Info>
             <Button className={activeTab === 'instructions' ? 'active' : ''} onClick={() => setActiveTab('instructions')}>Instructions</Button>
@@ -53,9 +53,12 @@ function Recipe() {
                 <ul>
                 {/* <h3 dangerouslySetInnerHTML={{__html: details.summary}}></h3> */}
                 <h3>How To Make:</h3>
-                <li dangerouslySetInnerHTML={{__html: details.instructions}}></li> 
+                <p dangerouslySetInnerHTML={{__html: details.instructions}}></p> 
                 <h3>Ready In Minutes:</h3>
-                <p dangerouslySetInnerHTML={{__html: details.readyInMinutes}}></p>    
+                <div class='a'>
+                <p dangerouslySetInnerHTML={{__html: details.readyInMinutes}}></p> 
+                </div>
+   
                 </ul>
             )}
             {activeTab === 'dishtype' && (                
@@ -102,6 +105,22 @@ const DetailWrapper = styled.div`
         margin: 1rem;
         font-weight: 100;
     }
+    .a {
+    /* list-style-type: square; */
+         width:100px;
+        height:30px;
+        display: flex;
+    }
+    .a:before {
+        content: "";
+        background: currentColor;
+        width:15px;
+        clip-path: polygon(0 10px,calc(100% - 15px) 10px,calc(100% - 15px) 0,100% 50%,calc(100% - 15px) 100%,calc(100% - 15px) calc(100% - 10px),0 calc(100% - 10px));
+        animation: a1 1.5s infinite linear;
+    }
+    @keyframes a1 {
+         90%,100%{flex-grow: 1} 
+}
     ul{
         margin-top: 2rem;
         font-weight: 100;

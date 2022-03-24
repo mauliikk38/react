@@ -6,19 +6,19 @@ import { NavLink } from 'react-router-dom';
 function Catagory() {
   return (
     <List>
-        <SLink to={'/cuisine/>Italian'} activeClassName="active">
+        <SLink to={'/cuisine/Italian'}>
         <FaPizzaSlice />
         <h4>Italian</h4>  
         </SLink><br />
-        <SLink to={'/cuisine/>American'}>
+        <SLink to={'/cuisine/American'}>
         <FaHamburger />
         <h4>American</h4>  
         </SLink><br />
-        <SLink to={'/cuisine/>Thai'}>
+        <SLink to={'/cuisine/Thai'}>
         <GiNoodles />
         <h4>Thai</h4>  
         </SLink><br />
-        <SLink to={'/cuisine/>Japanese'}>
+        <SLink to={'/cuisine/Japanese'}>
         <GiChopsticks />
         <h4>Japanese</h4>  
         </SLink><br />
@@ -56,7 +56,17 @@ const SLink = styled(NavLink)`
     font-size: 2rem;
   }
   &.active{
-    background-image: linear-gradient(to right, red , yellow);
+    background-image: linear-gradient(to right, black, red);
+  }
+  
+  svg{
+    color: white;
+  }
+  h4{
+    color: white;
+  }
+  &.hover{
+    background-image:linear-gradient(to right, white, yellow);
   }
   svg{
     color: white;
