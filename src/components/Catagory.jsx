@@ -3,14 +3,10 @@ import { GiNoodles, GiChopsticks } from 'react-icons/gi';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-
-
-
-
 function Catagory() {
   return (
     <List>
-        <SLink to={'/cuisine/>Italian'}>
+        <SLink to={'/cuisine/>Italian'} activeClassName="active">
         <FaPizzaSlice />
         <h4>Italian</h4>  
         </SLink><br />
