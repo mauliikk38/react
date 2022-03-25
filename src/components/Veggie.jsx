@@ -21,7 +21,7 @@ function Veggie() {
         if(check){
             setVeggie(JSON.parse(check));
             }else{
-                const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9&tags=vegetarian`);
+                const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=30&tags=vegetarian`);
                 const data = await api.json();
                 localStorage.setItem('veggie', JSON.stringify(data.recipes));
                 setVeggie(data.recipes); 
@@ -101,7 +101,7 @@ const Card = styled.div`
         justify-content: center;
         align-items: center;
         text-transform: capitalize;
-        text-shadow: 2px 2px red;
+        text-shadow: .2rem .2rem red;
     }
     `;
 

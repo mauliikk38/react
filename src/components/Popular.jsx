@@ -19,7 +19,7 @@ function Popular() {
         if(check){
             setPopular(JSON.parse(check));
             }else{
-                const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=12`);
+                const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=40`);
                 const data = await api.json();
                 localStorage.setItem('popular', JSON.stringify(data.recipes));
                 setPopular(data.recipes); 
@@ -99,7 +99,7 @@ const Card = styled.div`
         justify-content: center;
         align-items: center;
         text-transform: capitalize;
-        text-shadow: 2px 2px red;
+        text-shadow: .2rem .2rem red;
     }
     `;
 
